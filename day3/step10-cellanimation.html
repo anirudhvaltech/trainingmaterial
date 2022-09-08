@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Animation</title>
+    <style>
+        canvas{
+            border: 2px solid black;
+            margin: 100px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="200" height="134"></canvas>
+    <script>
+         var ctx = document.getElementById("can").getContext("2d");
+         var horse = new Image()
+            horse.src = "images/horse.png";
+            horse.onload = animation;
+         var horseX = -2000;
+
+         function animation(){
+            setInterval(function(){
+                ctx.clearRect(0,0,200,134); 
+                horseX+=200
+                ctx.drawImage(horse, horseX, 0);
+                
+                if(horseX == 0)
+                {
+                    horseX = -2000;
+                }
+            },100)
+         };
+    </script>
+       
+
+
+</body>
+</html>
