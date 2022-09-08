@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inputHandler(source){
+            document.getElementById(source.type+"op").value=source.value;
+         };
+         function outputHandler(source){
+            document.getElementById("prog").value=source.value;
+         };
+         function lowHandler(source){
+            document.getElementById("meta").low = source.value;
+         };
+         function highHandler(source){
+            document.getElementById("meta").high = source.value;
+         };
+         function optiHandler(source){
+            document.getElementById("meta").optimum = source.value;
+         };
+         function valHandler(source){
+            document.getElementById("meta").value = source.value;
+         };
+        
+    </script>
+</head>
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>As rendered by browser</th>
+                <th>Value entered by user</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>time</td>
+                <td> 
+                    <input type="time" oninput="inputHandler(this)">
+                </td>
+                <td><output id="timeop"></output></td>
+            </tr>
+            <tr>
+                <td>datetime-local</td>
+                <td> <input type="datetime-local" oninput="inputHandler(this)"></td>
+                <td><output id="datetime-localop"></output></td>
+            </tr>
+            <tr>
+                <td>week</td>
+                <td> 
+                    <input type="week" oninput="inputHandler(this)">
+                </td>
+                <td><output id="weekop"></output></td>
+            </tr>
+            <tr>
+                <td>month</td>
+                <td> 
+                    <input type="month" oninput="inputHandler(this)">
+                </td>
+                <td><output id="monthop"></output></td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td> 
+                    <input type="range" oninput="inputHandler(this)">
+                </td>
+                <td><output id="rangeop"></output></td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td> 
+                    <input type="search" oninput="inputHandler(this)">
+                </td>
+                <td><output id="searchop"></output></td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td> 
+                    <input type="url" oninput="inputHandler(this)">
+                </td>
+                <td><output id="urlop"></output></td>
+            </tr>
+            <tr>
+                <td>tel</td>
+                <td> 
+                    <input type="tel" oninput="inputHandler(this)">
+                </td>
+                <td><output id="telop"></output></td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td> 
+                    <input type="number" oninput="inputHandler(this)">
+                </td>
+                <td><output id="numberop"></output></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td> 
+                    <input type="email" oninput="inputHandler(this)">
+                </td>
+                <td><output id="emailop"></output></td>
+            </tr>
+            <tr>
+                <td>progress</td>
+                <td> 
+                    <input type="range" min="0" max="1" step="0.1" oninput="outputHandler(this)">
+                </td>
+                <td><progress id="prog"></progress></td>
+            </tr>
+            <tr>
+                <td>meter</td>
+                <td> 
+                   Low : <input min="0" max="1" step="0.1" type="range" oninput="lowHandler(this)">
+                   High :  <input min="0" max="1" step="0.1" type="range" oninput="highHandler(this)">
+                   Optimum : <input min="0" max="1" step="0.1" type="range" oninput="optiHandler(this)">
+                   Value :  <input min="0" max="1" step="0.1" type="range" oninput="valHandler(this)">
+                </td>
+                <td>
+                    <meter id="meta" ></meter>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

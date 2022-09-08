@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Filling Shapes</title>
+    <style>
+        canvas{
+            border: 2px solid black
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d");
+
+        ctx.beginPath();
+        ctx.strokeStyle = "red"
+        ctx.fillStyle ="orange"
+        ctx.moveTo(100,100);
+        ctx.lineTo(200,100);
+        ctx.lineTo(200,200);
+        ctx.lineTo(100,200);
+        ctx.lineTo(100,100);
+        ctx.fill();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.strokeStyle = "grey"
+        ctx.fillStyle ="blue"
+        ctx.moveTo(300,100);
+        ctx.lineTo(400,100);
+        ctx.lineTo(400,200);
+        ctx.lineTo(300,200);
+        ctx.lineTo(300,100);
+        ctx.fill();
+        ctx.stroke();
+        
+    </script>
+</body>
+</html>

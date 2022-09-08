@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setBackgroundColor(source)
+        {
+            items = document.getElementsByClassName("container")[0].style.backgroundColor = source.value;
+            
+        }
+        function setFontColor(source)
+        {
+            items = document.getElementsByClassName("container")[0].style.color = source.value;
+        }
+        function setColor(source)
+        {
+            document.body.style.backgroundColor=source.value;
+        }
+    </script>
+</head>
+<body>
+    <label>Set background color
+        <input type="color" onchange="setBackgroundColor(this)">
+    </label>
+    <label>Set font color
+        <input type="color"  onchange="setFontColor(this)">
+    </label>
+    <label>Set color
+        <input type="color" onchange="setColor(this)"></input></label>
+    <div class="container">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, dolores? Repellendus consectetur dolores, explicabo aperiam amet et quis quam dignissimos repudiandae, eveniet officiis earum exercitationem quae dolore error, veniam eos?
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nobis debitis nostrum quaerat non ipsum reprehenderit numquam officiis deserunt. Facere sequi suscipit accusantium expedita impedit quidem architecto reiciendis velit? Voluptatem?
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vero amet fuga officia nemo dolorem ipsum numquam. Vero harum autem, molestiae illum praesentium eaque optio repudiandae saepe eligendi, rem veritatis!
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem impedit quod nam optio accusamus iste nulla, sunt cum repudiandae non doloribus quasi officiis aperiam corporis quae explicabo sapiente dolorem ducimus?
+    </div>
+</body>
+</html>
+
