@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article:not(ul~article){
+            border: 2px solid green;
+        }
+        /* ul~article includes all articles after ul
+        ul+article includes the first article after ul */
+        body > li{
+            border: 2px solid red;
+        }
+        /* looking for direct child of the body */
+    </style>
+</head>
+<body>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+    <li>List item 4</li>
+    <li>List item 5</li>
+    <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eos deserunt maxime! Vero nihil quasi tempore atque maxime vitae pariatur eos odit dignissimos labore, consequuntur reprehenderit esse distinctio culpa est.
+    </article>
+
+    <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eos deserunt maxime! Vero nihil quasi tempore atque maxime vitae pariatur eos odit dignissimos labore, consequuntur reprehenderit esse distinctio culpa est.
+    </article>
+    <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eos deserunt maxime! Vero nihil quasi tempore atque maxime vitae pariatur eos odit dignissimos labore, consequuntur reprehenderit esse distinctio culpa est.
+    </article>
+
+    <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eos deserunt maxime! Vero nihil quasi tempore atque maxime vitae pariatur eos odit dignissimos labore, consequuntur reprehenderit esse distinctio culpa est.
+    </article>
+</body>
+</html>

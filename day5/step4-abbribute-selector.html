@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img[alt ^= 'super']{
+            border: 5px solid red;
+        } */
+
+        
+        img[alt ^= 'black']{
+            border: 5px solid blue;
+        }
+        img[alt *= 'n']{
+            border: 5px solid blue;
+        }
+        img[alt $= 'man']{
+            border: 5px solid red;
+        }
+        img[width= '99']{
+            border: 5px solid green;
+        }
+        /*
+            ^-starting of the word 
+            $-ending of the word
+            *-anywhere in between
+            ~-select all occurences 
+        */
+    </style>
+</head>
+<body>
+    <img src="images/blackpanther.jpg" alt="blackpanther">
+    <img src="images/superman.jpg" alt="superman">
+    <img src="images/blackpanther.jpg" width="99"> 
+</body>
+</html>

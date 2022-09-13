@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 selectors</title>
+    <style>
+        ul:nth-of-type(odd){
+            border: 2px solid black;
+        }
+        ul:nth-last-of-type(2){
+            border: 2px solid yellowgreen;
+        }
+        h1:only-of-type{
+            border: 2px solid red;
+        }
+        h2:only-child{
+            border: 2px solid cyan;
+        }
+        section p::selection{
+            background-color: green;
+        }
+        li:nth-child(odd){
+            border: 2px solid blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Valtech Selectors Application</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas alias expedita tempore, dolorem iste quisquam, ipsam asperiores eum sequi doloribus rem, vitae eaque libero sit velit temporibus dolorum. Beatae?
+    </p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas alias expedita tempore, dolorem iste quisquam, ipsam asperiores eum sequi doloribus rem, vitae eaque libero sit velit temporibus dolorum. Beatae?
+    </p>
+    <hgroup>
+        <h2>I am the only child</h2>
+    </hgroup>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+        <li>List item 6</li>
+        <li>List item 7</li>
+        <li>List item 8</li>
+    </ol>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+        <li>List item 6</li>
+        <li>List item 7</li>
+        <li>List item 8</li>
+    </ul>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+        <li>List item 6</li>
+        <li>List item 7</li>
+        <li>List item 8</li>
+    </ul>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+        <li>List item 6</li>
+        <li>List item 7</li>
+        <li>List item 8</li>
+    </ul>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+        <li>List item 6</li>
+        <li>List item 7</li>
+        <li>List item 8</li>
+    </ul>
+    <section>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas alias expedita tempore, dolorem iste quisquam, ipsam asperiores eum sequi doloribus rem, vitae eaque libero sit velit temporibus dolorum. Beatae?
+        </p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas alias expedita tempore, dolorem iste quisquam, ipsam asperiores eum sequi doloribus rem, vitae eaque libero sit velit temporibus dolorum. Beatae?
+        </p>
+    </section>
+</body>
+</html>
