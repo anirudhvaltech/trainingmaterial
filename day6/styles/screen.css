@@ -1,0 +1,15 @@
+section{
+    width: 1400px;
+    background-color: darkcyan;
+    margin: auto;
+    height: 600px;
+}
+article{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    
+    background-color: orange;
+    float: left;
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" media="print" href="styles/print.css">
+    <link rel="stylesheet" media="screen" href="styles/screen.css">
+    <link rel="stylesheet" media="screen" href="styles/screen.css">
+    <link rel="stylesheet" media="screen and (max-width : 1200px)" href="styles/screen-1200.css">
+    <link rel="stylesheet" media="screen and (max-width : 1000px)" href="styles/screen-1000.css">
+    <link rel="stylesheet" media= "screen and (orientation: portrait) "href="styles/portrait.css">
+    <script>
+        window.onload = function(){
+            setInterval(function(){
+                document.getElementById("log").innerText = window.innerWidth + " px";
+            },1000)
+        }
+    </script>
+<!-- 
+    <style media="print">
+        @import url(print.css);
+    </style>
+    <style media="screen">
+        @import url(screen.css);
+    </style> -->
+</head>
+<body>
+    <img id="photo">
+    <h1>Screen width <span id="log"></span></h1>
+    <section>
+        <article>Box 1</article>
+        <article>Box 2</article>
+        <article>Box 3</article>
+        <article>Box 4</article>
+        <article>Box 5</article>
+        <article>Box 6</article>
+        <article>Box 7</article>
+        <article>Box 8</article>
+        <article>Box 9</article>
+        <article>Box 10</article>
+    </section>
+</body>
+</html>

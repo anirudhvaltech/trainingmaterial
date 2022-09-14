@@ -1,0 +1,32 @@
+section{
+    /* width: 900px;
+    height: 700px; */
+
+    border: 2px solid black;
+    background-color: darkcyan;
+
+}
+
+
+article{
+    /* width: 80px;
+    height: 80px; */
+    /* border: 2px solid rgb(177, 45, 45); */
+    float: left;
+    margin: 5px;
+}
+article:nth-child(2){
+
+    background-color: black;
+    color: white;
+    float: left;
+    margin: 5px;
+}
+article:nth-child(1){
+
+    background-color: black;
+    color: white;
+    float: left;
+    margin: 5px;
+}
+

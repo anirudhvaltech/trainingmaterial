@@ -1,0 +1,22 @@
+article{
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+
+}
+
+
+article:first-child{
+
+    background-color: greenyellow;
+    color: black;
+    float: left;
+    margin: 5px;
+}
+article:nth-child(2){
+    
+    color: black;
+    background-color: greenyellow;
+    float: left;
+    margin: 5px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .alist{
+            display: block;
+            
+            width: 100%;
+        }
+        .x-orange{
+            
+            
+        }
+        .x-blue{
+            background-color: skyblue;
+        }
+      
+        .toph{
+            font-size: 100px;
+        }
+        .banner {
+        background-color: #fff;
+        border: solid 1px #ddd;
+        border-radius: 3px;
+        box-shadow: inset 0 1px rgb(255 255 255 / 30%);
+        font-family: "Franklin ITC", sans-serif;
+        font-size: .875rem;
+        line-height: 1.428571429;
+        margin: 0 auto 36px;
+        padding: 12px;
+        text-align: center;
+        }
+        p{
+            font-family: Georgia, Times, Times New Roman, serif;
+            font-size: 1.5rem;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 20px;
+            
+        }
+        article{
+            font-size: 15px;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            color: #222;
+            font-family: Georgia, Times, Times New Roman, serif;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <h1 class="toph"><center>A List Apart</center> </h1>
+    <img class='alist' src="images/alistapart.jpeg" >
+    <div class="row">
+         
+        <div class="grid col-md-3"></div>
+         <div class="grid col-md-6">
+            <p>Do you remember when having a great website was enough? Now, people are getting answers from Siri, Google search snippets, and mobile apps, not just our websites. Forward-thinking organizations have adopted an <em>omnichannel content strategy</em>, whose mission is to reach audiences across multiple digital channels and platforms.
+            </p>
+        </div>
+        <div class="grid col-md-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="grid col-md-3">
+            <div class="banner">
+                <a href="https://sps.northwestern.edu/ala">
+                    <img class="banner-logo" src="https://i0.wp.com/alistapart.com/wp-content/uploads/2020/09/IDS_700x200_Logo-copy.gif?w=960&amp;ssl=1" alt="Northwestern Logo" width="214" height="61">
+                    <p>
+                        Northwestern’s Online MS in Information Design and Strategy. Choose from tracks in content strategy, data science and analytics, and learning design.
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div class="grid col-md-6">
+            <article>
+                But how do you set up a content management system (CMS) to reach your audience now and in the future? I learned the hard way that creating a content model—a definition of content types, attributes, and relationships that let people and systems understand content—with my more familiar design-system thinking would capsize my customer’s omnichannel content strategy. You can avoid that outcome by creating content models that are semantic and that also connect related content. 
+                <br>
+                <br>
+                I recently had the opportunity to lead the CMS implementation for a Fortune 500 company. The client was excited by the benefits of an omnichannel content strategy, including content reuse, multichannel marketing, and robot delivery—designing content to be intelligible to bots, Google knowledge panels, snippets, and voice user interfaces. 
+                <br>
+                <br>
+                A content model is a critical foundation for an omnichannel content strategy, and for our content to be understood by multiple systems, the model needed semantic types—types named according to their meaning instead of their presentation. Our goal was to let authors create content and reuse it wherever it was relevant. But as the project proceeded, I realized that supporting content reuse at the scale that my customer needed required the whole team to recognize a new pattern.
+                <br>
+                <br>
+                Despite our best intentions, we kept drawing from what we were more familiar with: design systems. Unlike web-focused content strategies, an omnichannel content strategy can’t rely on WYSIWYG tools for design and layout. Our tendency to approach the content model with our familiar design-system thinking constantly led us to veer away from one of the primary purposes of a content model: delivering content to audiences on multiple marketing channels.
+            </article>
+        </div>
+        <div class="grid col-md-3"></div>
+    </div>
+    
+    <div class="row">
+        <div class="grid col-md-3">
+        </div>
+        <div class="grid col-md-6">
+            <article>
+                We needed to help our designers, developers, and stakeholders understand that we were doing something very different from their prior web projects, where it was natural for everyone to think about content as visual building blocks fitting into layouts. The previous approach was not only more familiar but also more intuitive—at least at first—because it made the designs feel more tangible. We discovered two principles that helped the team understand how a content model differs from the design systems that we were used to:
+                <br>
+                &nbsp;&nbsp;                &nbsp;&nbsp;
+
+                <ol>
+                    <li>Content models must define semantics instead of layout.</li>
+                    <li>And content models should connect content that belongs together. </li>
+                </ol>
+                 
+            </article>
+        </div>
+        <div class="grid col-md-3"></div>
+    </div>
+
+   </div>
+   
+</body>
+</html>

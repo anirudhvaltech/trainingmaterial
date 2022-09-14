@@ -1,0 +1,31 @@
+section{
+    /* width: 900px;
+    height: 700px; */
+
+    border: 2px solid black;
+    background-color: darkcyan;
+
+}
+
+
+article:first-child{
+
+    background-color: cyan;
+    color: black;
+    float: left;
+    margin: 5px;
+}
+article:nth-child(2){
+    
+    color: black;
+    background-color: green;
+    float: left;
+    margin: 5px;
+}
+
+#photo{
+    width: 200px;
+    height: 200px;
+    background-image: url(images/antman.jpg);
+    
+}
