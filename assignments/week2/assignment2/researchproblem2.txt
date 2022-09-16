@@ -1,0 +1,13 @@
+Problem statement:
+	First display a list of alphabet placed in a div
+	Place alphabets randomly in a container
+
+Research:
+	Website:developer.mozilla.org
+	Topics researched:
+		Javascript
+		Math.random to generate random number
+		DOM functions such as document.getElementByID
+		Arrays
+		Flex box
+		
