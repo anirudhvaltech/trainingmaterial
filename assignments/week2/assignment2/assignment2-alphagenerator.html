@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet List Assignment 2
+    </title>
+    <style>
+        .container{
+            width: 800px;
+            flex: content;
+            margin: auto;
+            background: rgb(47,120,23);
+            background: linear-gradient(90deg, rgba(47,120,23,1) 0%, rgba(5,29,28,1) 50%, rgba(22,2,27,1) 100%, rgba(167,73,170,1) 100%);
+            color: white;
+            border: 2px solid black;
+            justify-content: start;
+            display: flex;
+        }
+        .placedv{
+            display: flex;
+            width: 200px;
+            justify-content: center;
+            border: 2px solid transparent;
+            flex-direction: row;
+        }
+        .alphaloc{
+            width: 600px;
+            border: 2px solid transparent;
+            color: white;
+            
+        }
+       
+        h1{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        ul{
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+    <script>
+        var alpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        window.onload=function display(){
+            for(var i=0;i<alpha.length;i++){  
+                    console.log(alpha[i]);
+                    document.getElementById("log").innerHTML += "&nbsp"+"<li>"+alpha[i]+"</li>";
+
+            }
+        }
+        function genRandomList(){
+            document.getElementById("got").textContent="";
+            function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+            var j=randomIntFromInterval(0,26);
+            var i=randomIntFromInterval(0,26);
+            console.log(j);
+            if(i<j){
+                for(;i<j;i++){  
+                    document.getElementById("got").innerHTML += "&nbsp"+"<li>"+alpha[i]+"</li>";
+                }
+            }
+            else if(i>j){
+                for(;j<i;j++){  
+                    document.getElementById("got").innerHTML += "&nbsp"+"<li>"+alpha[j]+"</li>";
+                }
+            }
+            else{
+                document.getElementById("got").innerHTML += "&nbsp"+"<li>"+alpha[i]+"</li>";
+            }
+    
+        }
+        
+            
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="placedv">
+            <span id="log">Alphabets
+                <ul></ul>
+            </span>
+        </div>
+        <div class="alphaloc">
+            
+            <h1>Place the alphabets here</h1><br>
+            <button onclick="genRandomList()">Generate Random List</button><br>
+            <h2>Output : </h2>
+            <div class="place" style="width:auto; display: flex; justify-content: center;">
+                
+                <ul><span id="got"></span></ul>
+            </div>
+    
+        </div>
+    </div>
+           
+</body>
+</html>

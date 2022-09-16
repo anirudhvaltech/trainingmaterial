@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1: Flex Box Layout</title>
+    <style>
+        .container{
+            height: 600px;
+            width: 600px;
+            border: 2px solid black;
+            margin: auto;
+        }
+        .flexcontainer{
+            display: flex;
+            height: 104px;
+            border: 2px solid transparent;
+            padding: 2px;
+            margin-bottom: 2px;
+        }
+        .boxes4{
+            display: flex;
+            height: 50px;
+            border: 2px solid transparent;
+            padding: 2px;
+            justify-content: center;
+            margin-bottom: 2px;
+        }
+        .boxes4row{
+            display: flex;
+            height: 79px;
+            border: 2px solid transparent;
+            padding: 2px;
+            margin-bottom: 2px;
+            justify-content: center;
+        }
+        .lastbox{
+            display: flex;
+            justify-content: center;
+            height: 75px;
+            border: 2px solid transparent;
+            padding: 2px;
+            margin-bottom: 2px;
+        }
+        .box{
+            justify-content: space-evenly;
+            margin-left: 5px;
+            margin-right: 5px;
+
+            background-color: peachpuff;
+        }
+        
+        .box1{
+            height: 100px;
+            width: 580px;
+            margin-top: 5px;
+        }
+        .box2{
+            height: 50px;
+            width: 100px;
+            flex-direction: row;
+        }
+        .box3{
+            height: 75px;
+            width: 135px;
+        }
+        .box4{
+            height: 60px;
+            width: 580px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flexcontainer">
+            <article class="box box1"></article>
+        </div>
+        <div class="boxes4">
+            <article class="box box2"></article>
+            <article class="box box2"></article>
+            <article class="box box2"></article>
+            <article class="box box2"></article>
+        </div>
+        <div class="boxes4row">
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+        </div>
+        <div class="boxes4row">
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+        </div>
+        <div class="boxes4row">
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+        </div>
+        <div class="boxes4row">
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+            <article class="box box3"></article>
+        </div>
+        <div class="lastbox">
+            <article class="box box4"></article>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
