@@ -1,0 +1,122 @@
+Course Coverage
+
+DAY 1
+
+HTML5
+Converting a legacy document to HTML5
+
+New APIs in HTML5
+All new Header code
+Semantic tags
+The Form API
+The Canvas API
+Fallback Options
+The Canvas animation 
+HTML5 Boiler plate 
+Usage
+
+HTML5 Features and detection
+HTML5 shiv
+
+The Geolocation API
+Handling Errors
+Dealing with mobile
+Fallback options
+
+Storage API
+What is HTML5 Storage 
+Different options available 
+The Local Storage
+Tracking Changes to Storage
+Limitations
+Fallback options
+
+DAY 2
+
+MORE APIs
+FileSystem API
+Methods available
+Dealing with files and directories
+Upload and selections
+
+Offline API
+Steps involved
+Features and use case
+
+The WebSocket API
+Support and Usage
+Fallback Option
+
+WebWorkers API
+Support and Usage
+
+History API
+Tips and Tricks
+
+DAY 3
+Usages of Cascading Style Sheets	
+Including CSS in HTML	
+Cascading	
+Inheritance	
+Styles	
+
+Working with colors	
+Colors	
+Background colors	
+Background Image.	
+Background image properties.	
+
+Texts and Fonts with Style	
+Working with Fonts	
+Working with Text	
+
+Formatting and Positioning	
+The CSS formatting Model	
+Block-level Elements	
+Box Properties	
+Margins	
+Padding	
+
+Borders	
+Width and Height
+
+Positioning	
+Float	
+Clear	
+
+DAY4
+Introduction to new CSS 3
+CSS 3 Basics
+New Selectors
+Filters
+New CSS3 Box Model
+Dealing with multi column layouts
+New Border Capabilities
+Dealing with corners
+Multiple backgrounds
+The new scale 9 border capabilities
+Transparencies and opacities
+Text coloring
+Gradients
+Shadows 
+Multi shadows
+Text shadows
+Reflections 
+Font embedding in CSS3
+Usage of Media Query
+Transformations
+2D Transformations
+Transitions
+Animations 
+
+Browser support
+Feature detection
+Using CSS generators
+
+Introduction to Course
+Problems with CSS in general
+Color and related issues in CSS
+CSS value duplication issues
+CSS’s cascading issues
+Problems that can be solved with math in CSS
+Dealing with multiple CSS files

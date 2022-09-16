@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment3</title>
+    <style>
+        canvas{
+            border: 2px solid black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="900" height="900" id="can" ></canvas>
+    <script>
+        var ctx =document.getElementById("can").getContext("2d");
+        ctx.rotate((Math.PI/100)*5);
+        var img1 = new Image();
+            img1.src="spiderman.jpg"
+            img1.onload = function(){
+                //ctx.rotate((Math.PI/100)*345);
+                ctx.drawImage(img1,200,25);
+                
+               ctx.beginPath();
+               ctx.strokeStyle="silver";
+               ctx.fillStyle="silver";
+               ctx.moveTo(200,275);
+               ctx.lineTo(500,275);
+               ctx.lineTo(500,350);
+               ctx.lineTo(200,350);
+               ctx.lineTo(200,275);
+               ctx.fill();
+               ctx.stroke();
+               ctx.closePath();
+              // ctx.beginPath();
+               ctx.font="bold 30px arial";
+               ctx.fillStyle="black";
+               ctx.fillText("SPIDERMAN",210,320);
+               
+
+            }
+        var img2 = new Image();
+            img2.src = "thor.jpg";
+            img2.onload = function(){
+                //ctx.rotate((Math.PI/100)*345);
+                ctx.drawImage(img2,520,395);
+                ctx.beginPath();
+               ctx.strokeStyle="silver";
+               ctx.fillStyle="silver";
+               ctx.moveTo(520,635);
+               ctx.lineTo(820,635);
+               ctx.lineTo(820,705);
+               ctx.lineTo(520,705);
+               ctx.lineTo(520,635);
+               ctx.fill();
+               ctx.stroke();
+               ctx.closePath();
+              // ctx.beginPath();
+               ctx.font="bold 30px arial";
+               ctx.fillStyle="black";
+               ctx.fillText("THOR",530,680);
+            }
+        var img3 = new Image();
+            img3.src = "blackpanther.jpg";
+            img3.onload = function(){
+               // ctx.rotate((Math.PI/100)*345);
+                ctx.drawImage(img3,200,395);
+                ctx.beginPath();
+               ctx.strokeStyle="silver";
+               ctx.fillStyle="silver";
+               ctx.moveTo(200,635);
+               ctx.lineTo(500,635);
+               ctx.lineTo(500,705);
+               ctx.lineTo(200,705);
+               ctx.lineTo(200,635);
+               ctx.fill();
+               ctx.stroke();
+               ctx.closePath();
+              // ctx.beginPath();
+               ctx.font="bold 30px arial";
+               ctx.fillStyle="black";
+               ctx.fillText("BLACK PANTHER",210,680);
+            }
+        var img4 = new Image();
+            img4.src = "hulk.jpg";
+            img4.onload = function(){
+                //ctx.rotate((Math.PI/100)*345);
+                ctx.drawImage(img4,520,25);
+                ctx.beginPath();
+               ctx.strokeStyle="silver";
+               ctx.fillStyle="silver";
+               ctx.moveTo(520,275);
+               ctx.lineTo(820,275);
+               ctx.lineTo(820,350);
+               ctx.lineTo(520,350);
+               ctx.lineTo(520,275);
+               ctx.fill();
+               ctx.stroke();
+               ctx.closePath();
+              // ctx.beginPath();
+               ctx.font="bold 30px arial";
+               ctx.fillStyle="black";
+               ctx.fillText("HULK",530,320);
+            }
+    </script>
+</body>
+</html>
