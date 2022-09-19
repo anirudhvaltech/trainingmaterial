@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove Events</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            background-color: purple;
+            margin: auto;
+            border: 1px solid transparent;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+        }
+    </style>
+    <script>
+        var count = 1;
+        function clickHandler(){
+            var box=document.createElement("div");
+            document.getElementsByClassName("container")[0].appendChild(box);
+        }
+        function removeClickHandler(){
+            
+            document.getElementsByTagName("button")[0].removeEventListener("click",clickHandler);
+            if(count%2==0){
+                
+                document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+                document.getElementsByTagName("button")[1].textContent = "stop box";
+
+            }
+            else{
+                document.getElementsByTagName("button")[1].textContent = "Remove stop box";
+            }
+            count++;
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+
+            document.getElementsByTagName("button")[1].addEventListener("click",removeClickHandler);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    
+    <button>Add Box</button>
+    <button>Stop Box</button>
+    <div class="container"></div>
+</body>
+</html>

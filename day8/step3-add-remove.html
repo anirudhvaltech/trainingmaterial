@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            background-color: purple;
+            margin: auto;
+            border: 1px solid transparent;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",init);
+        count=1;
+        function clickHandler(){
+            var box=document.createElement("div");
+            document.getElementsByClassName("container")[0].appendChild(box);
+            box.textContent=count
+            count++;
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", clickHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", removeFirstHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click", removeLastHandler);
+        }
+        function removeFirstHandler(){
+            var box=document.getElementsByClassName("container")[0].firstChild;
+            if(box){
+                document.getElementsByClassName("container")[0].removeChild(box);
+            }
+            
+        }
+        function removeLastHandler(){
+            var box=document.getElementsByClassName("container")[0].lastChild;
+            if(box){
+                document.getElementsByClassName("container")[0].removeChild(box);
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <div class="container"></div>
+</body>
+</html>

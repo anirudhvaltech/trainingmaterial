@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .selected{
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            console.log(document.body.children.length);
+            console.log(document.title);
+            document.body.children[0].setAttribute("class","selected")
+            console.log(document.images[0])
+            console.log(document.scripts)
+            console.log(document.links)
+            const heading = document.createElement("h1");
+            const headingText = document.createTextNode("Big Head!");
+            heading.appendChild(headingText);
+            document.body.appendChild(heading);
+            for (const link of document.links) {
+                const linkHref = document.createTextNode(link.href);
+                const lineBreak = document.createElement("br");
+                document.body.appendChild(linkHref);
+                document.body.appendChild(lineBreak);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <a href="http://google.com">link </a>
+    <img src="1.jpg">
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus sapiente recusandae odit incidunt laboriosam reprehenderit aliquid non rerum voluptates vitae, hic odio explicabo veniam quo eveniet ipsam optio fuga ipsa!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus sapiente recusandae odit incidunt laboriosam reprehenderit aliquid non rerum voluptates vitae, hic odio explicabo veniam quo eveniet ipsam optio fuga ipsa!
+    </p>
+
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+</body>
+</html>

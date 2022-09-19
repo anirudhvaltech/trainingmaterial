@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var win = null;
+        console.log(window.location)
+        function openWindow(){
+            win=window.open("http://google.com","winName","status,height=200,width=300");
+        };
+        function closeWindow(){
+            win.close();
+        };
+        function changeWindow(){
+            win.location = "http://tooncrush.com";
+        };
+
+    </script>
+</head>
+<body>
+    <button onclick="openWindow()">Open</button>
+    <button onclick="closeWindow()">Close</button>
+    <button onclick="changeWindow()">Change</button>
+</body>
+</html>

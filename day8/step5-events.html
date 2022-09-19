@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            background-color: purple;
+            margin: auto;
+            border: 1px solid transparent;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",init);
+        
+        var container = null;
+        count=1;
+        var ri=null;
+
+        function removeSelectedBox(evt){
+            container.removeChild(evt.target);
+        }
+
+        function init(){
+            container = document.getElementsByClassName("container")[0];
+            container.addEventListener("click", removeSelectedBox);
+            ri = setInterval(function(){
+                var box=document.createElement("div");
+                box.innerText=count;
+                container.appendChild(box);
+                count++;
+                if(count>50){
+                clearInterval(ri);
+                }
+            },100)
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

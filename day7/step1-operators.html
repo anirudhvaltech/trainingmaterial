@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+    <script>
+        var count = 0;
+        var value1=5;
+        var value2 ="5";
+        function increaseFun(){
+            
+            document.getElementById("op").value=count;
+            count++;
+        }
+        function checkValue(){
+            
+            if(value1==value2){
+
+                document.getElementById("op").value="Is true";
+            }
+            else{
+                document.getElementById("op").value="Is false";
+                
+            };
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Count is: <output id="op"> </output> </h1>
+    <button onclick="increaseFun()">Increase Count</button>
+    <button onclick="checkValue()">Compare two variables</button>
+</body>
+</html>
