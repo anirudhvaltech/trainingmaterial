@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+
+        var hero = {
+            title: 'Batman',
+            power: 7, 
+            city: "Gotham",
+            firstname: "Bruce",
+            lastname: "Wayne"
+        }
+
+        // var {
+        //     title: herotitle,
+        //     power: heropower,
+        //     city: herocity,
+        //     firstname: herofirstname,
+        //     lastname: herolastname
+        // } = hero;
+        // var {
+        //     title: title,
+        //     power: power,
+        //     city: city,
+        //     firstname: firstname,
+        //     lastname: lastname
+        // } = hero;
+        // var {
+        //     title,
+        //     power,
+        //     city,
+        //     firstname,
+        //     lastname
+        // } = hero;
+        // var { title, movieCount="4" } = hero;
+
+
+        // console.log(title);
+        // title = "Joker";
+        // console.log(title);
+        // console.log(hero.title);
+        // console.log(movieCount * 2);
+
+        // function getFaveHeroes(){
+        //     return ["Batman","Superman","Joker","Aquaman"];
+        // };
+
+        // var{ firsthero, secondhero, thirdhero, fourthhero} = getFaveHeroes();
+
+        // console.log(secondhero.toUpperCase());
+        // console.log(thirdhero.toUpperCase.length);
+        
+        // var allVals= { ...hero };
+        // allVals.title = "Joker";
+        console.log(JSON.stringify(hero));
+        console.log(JSON.parse(JSON.stringify(hero)));
+        var allVals = JSON.parse(JSON.stringify(hero));
+        console.log(allVals.title);
+        allVals.title="joker";
+        console.log(allVals.title);
+        console.log(hero.title);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

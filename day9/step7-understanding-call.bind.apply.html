@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+    <script>
+        var ironman = {
+            firstname: 'Tony',
+            lastname: 'Stark',
+            power: 7,
+            fullname : function(message, city){
+                return message + " " + this.firstname +" " + this.lastname + " is from "+city;
+
+            }
+        }
+        var spiderman = {
+            firstname: 'Peter',
+            lastname: 'Parker',
+            power: 6,
+            
+        }
+        var hulk = {
+            firstname: 'Bruce',
+            lastname: 'Banners',
+            power: 8,
+            
+        }
+
+        console.log(ironman.fullname("I am ironman","New York"));
+        // console.log(ironman.fullname.call(spiderman,"I am spiderman","New York"));
+        // console.log(ironman.fullname.call(spiderman,"Hulk","Ohio"));
+
+        // console.log(ironman.fullname.apply(spiderman,["I am spiderman","New York"]));
+        // console.log(ironman.fullname.apply(spiderman,["Hulk","Ohio"]));
+
+        var spidey = ironman.fullname.bind(spiderman);
+        var hulk = ironman.fullname.bind(hulk);
+        console.log(spidey("I am spiderman","New York"));
+        console.log(hulk("Hulk","Ohio"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
