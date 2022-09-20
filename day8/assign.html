@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow of Events</title>
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            background-color: purple;
+            margin: auto;
+            border: 1px solid transparent;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 5px;
+            overflow: hidden;
+            float: left;
+        }
+        .container div div{
+            width:20px;
+            height: 20px;
+            background-color: black;
+            color:white;
+            font: 20px;
+        }
+        div button{
+            height: 20px;
+            width: 20px;
+            margin: 10px;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+
+        var container = null;
+        var ri = null;
+        var count = 1;
+
+
+        function removeSelectedBox(evt){
+            if(evt.target.tagName === 'BUTTON'){
+                // document.getElementsByTagName("")[0].removeChild(evt.target)
+                document.getElementsByTagName("div")[0].removeChild(evt.target.parentNode)
+            }
+        }
+
+        function init(){
+            container = document.getElementsByClassName("container");
+            document.getElementsByTagName("div")[0].addEventListener('click',removeSelectedBox)
+            // document.addEventListener('click',removeSelectedBox)
+            ri = setInterval(function(){
+                var box = document.createElement("div")
+                var cross = document.createElement("button")
+                container[0].appendChild(box)
+                document.getElementsByTagName("div")[count].appendChild(cross)
+                count++;
+
+                if(count > 15){
+                    clearInterval(ri)
+                }
+            },50)
+        }
+
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <div id="log"></div>
+</body>
+</html>
