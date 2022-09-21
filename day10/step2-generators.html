@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators</title>
+    <script>
+
+        function *myFun(){
+            yield "val1";//like a break in a function
+            yield "val2";
+            yield "val3";
+            yield "val4";
+            yield "val5";
+        };
+
+        let fun = myFun();
+
+        console.log(fun.next().value);
+        console.log(fun.next().value);
+        console.log(fun.next().value);
+        console.log(fun.next().value);
+        console.log(fun.next().value);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

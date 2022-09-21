@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+        var promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(false){
+                    resolve("promise resolved");
+                }
+                else{
+                    reject("promise rejected");
+                }
+            },2000)
+        });
+
+        promise.then(function(message){
+            console.log("Success", message);
+            document.getElementsByTagName("li")[0].innerText = message;
+            return message.toUpperCase();
+        }, function(error){
+            console.log("Error" , error);
+            document.getElementsByTagName("li")[0].innerText = error;
+        }).
+        finally(function(){
+            console.log("Promise completed");
+        });
+
+        // promise.then(function(message){
+        //     console.log("Success", message);
+        //     document.getElementsByTagName("li")[0].innerText = message;
+        //     return message.toUpperCase();
+        // })
+        // .then(function(message){
+        //     console.log("Success", message);
+        //     document.getElementsByTagName("li")[1].innerText = message;
+        //     return message.toLowerCase();
+        // })
+        // .then(function(message){
+        //     console.log("Success", message);
+        //     document.getElementsByTagName("li")[2].innerText = message;
+        // }).
+        // catch(function(error){
+        //     console.log("Error" , error);
+        // }).
+        // finally(function(){
+        //     console.log("Promise completed");
+        // });
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

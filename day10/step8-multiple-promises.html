@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Promises</title>
+    <script>
+        var firstPromise = function(){
+            return new Promise(function(resolve, reject){
+                setInterval(function(){
+                    if(true){
+                        resolve("Resolved firstpromise message");
+                    }
+                    else{
+                        reject("Rejected firstpromise message");
+                    }
+                },1000)
+            })
+        }
+        var secondPromise = function(){
+            return new Promise(function(resolve, reject){
+                setInterval(function(){
+                    if(true){
+                        resolve("Resolved secondpromise message");
+                    }
+                    else{
+                        reject("Rejected secondpromise message");
+                    }
+                },1000)
+            })
+        }
+        var thirdPromise = function(){
+            return new Promise(function(resolve, reject){
+                setInterval(function(){
+                    if(true){
+                        resolve("Resolved thirdpromise message");
+                    }
+                    else{
+                        reject("Rejected thirdpromise message");
+                    }
+                },1000)
+            })
+        }
+
+        // Promise.all(firstPromise(), secondPromise(), thirdPromise())
+        // .then(function(res){
+        //     console.log(res);
+        // })
+        // .catch(function(error){
+        //     console.log(error);
+        // })
+        // .finally(function(){
+        //     console.log("All promises completed")
+        // }  
+        // );
+
+        //race accepts first resolved/rejected
+        // Promise.race([firstPromise(), secondPromise(), thirdPromise()])
+        // .then(function(res){
+        //     console.log(res);
+        // })
+        // .catch(function(error){
+        //     console.log(error);
+        // })
+        // .finally(function(){
+        //     console.log("All promises completed")
+        // }  
+        // );
+
+        //any accepts first resolved, if they all get resolved at the same time, then the first promise that has been passed is shown
+        Promise.any([ secondPromise(), firstPromise(), thirdPromise()])
+        .then(function(res){
+            console.log(res);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+        .finally(function(){
+            console.log("All promises completed")
+        }  
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

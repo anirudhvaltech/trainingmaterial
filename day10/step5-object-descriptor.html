@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Descriptor</title>
+    <script>
+        var hero = Object.create(null);
+
+        Object.defineProperty(hero, "title", {
+            value : "Ironman",
+            writable : true,
+        });
+
+        Object.defineProperty(hero, "accessTitle", {
+            get : function(){
+                return this.title;
+            },
+            set : function(ntitle){
+                this.title = ntitle;
+            }
+        });
+        //cannot have getter and setter and writable in the same descriptor
+        console.log(hero.title);
+        console.log(hero.accessTitle);
+        hero.accessTitle = "Ironmonger";
+        console.log(hero.accessTitle);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
