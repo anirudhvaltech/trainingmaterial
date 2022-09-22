@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax-JSON</title>
+    <style>
+        .container{
+            width: 465px;
+            height: 500px;
+            background-color: rgb(57, 31, 87);
+            border: 1px solid black;
+            text-align: justify;
+            display: table;
+        }
+        .container div{
+            background-color: aliceblue;
+            width: 202px;
+            color: darkslateblue;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            
+        }
+        .container div:hover{
+            background-color: rgb(34, 202, 124);
+            color: rgb(18, 16, 27);
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        .button{
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", xhrHandler);
+        function xhrHandler(evt){
+            if(evt.target.readyState===4){
+                JSON.parse(evt.target.responseText).root.participant.forEach(val => {
+                    // console.log(val.firstname);
+                    document.getElementsByClassName("container")[0].innerHTML+=`
+                    <div><h2>${val.firstname} ${val.lastname}</h2></div>`
+                })
+            }
+        }
+
+        function clickHandler(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+        }
+        function init(){
+            document.querySelector("button").addEventListener("click", clickHandler)
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Get Data</button>
+    <div class = "container">
+
+    </div>
+</body>
+</html>
