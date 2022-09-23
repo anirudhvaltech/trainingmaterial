@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX-Canvas Assignment</title>
+    <style>
+        /* canvas{
+
+        } */
+        /* .container{
+            width: 500px;
+            height: 200px;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: orange;
+            display: table;
+        } */
+        .button{
+            width: 520px;
+            margin: 10px auto;
+        }
+        /* .container div{
+            background-color: aliceblue;
+            color: blueviolet;
+            width: 395px;
+        } */
+        #can{
+            border: 2px solid orange
+        }
+
+    </style>
+    
+</head>
+<body>
+    <button>Get Bar Chart</button>
+    <canvas id="can" width="600" height="600"></canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d");
+        // drawLine(ctx, 50, 500, 50, 550, "black" );
+        // drawLine(ctx, 50, 550, 550, 550, "black" );
+
+        // var xhr = new XMLHttpRequest;
+        // xhr.addEventListener("readystatechange", xhrHandler);
+        var i=100;
+        var xhr = new XMLHttpRequest;
+        xhr.addEventListener("readystatechange", xhrHandler);
+        function xhrHandler(evt){
+            if(evt.target.readyState == 4){
+                      
+                    JSON.parse(evt.target.responseText).root.forEach(val => {
+                        if(i<490){
+                            drawLine(ctx, i, 500, i, 500-val.casesHandled, "black");
+                            drawLine(ctx, i, 500-val.casesHandled, i+80, 500-val.casesHandled, "black");
+                            drawLine(ctx, i+80, 500-val.casesHandled, i+80, 500, "black");
+                            drawLine(ctx, i+80, 500, i, 500, "black");
+                            ctx.fillStyle = `${val.col}`
+                            ctx.fillRect(i,500-val.casesHandled, 80, val.casesHandled);
+                            i+=80;
+                            
+                        }
+                    })           
+            }
+        }
+
+        function drawLine(ctx, startX, startY, endX, endY,color){
+            ctx.save();
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(startX,startY);
+            ctx.lineTo(endX,endY);
+            // ctx.fillStyle = fillCol;
+            ctx.stroke();
+            ctx.restore();
+        
+        }
+        // function xhrHandler(evt){
+        //     if(evt.target.readyState == 4){
+        //         JSON.parse(evt.target.responseText).root.forEach(val => {
+        //             document.getElementsByClassName("container")[0].innerHTML += 
+        //             `<div><h1>${val.agentName}</h1>
+        //                 <h2>${val.col}</h2>
+        //                 <h2>${val.casesHandled}</h2>
+        //              </div>
+        //             `
+        //         })
+        //     }
+        // }
+        function clickHandler(){
+            xhr.open("get", "data.json", true);
+            xhr.send();
+        }
+        function init(){
+            
+            document.querySelector("button").addEventListener("click", clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+    <!-- <div class = "container"></div> -->
+</body>
+</html>
