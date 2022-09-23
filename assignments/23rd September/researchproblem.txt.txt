@@ -1,0 +1,24 @@
+Problem statement:
+	Create a bar chart out of given information that should be extracted and parsed from a JSON file
+
+Research:
+	Website:developer.mozilla.org
+	Topics researched:
+		AJAX
+		XML HTTP Request
+		XML.open(),.send()
+		JSON.parse
+		evt.target
+		evt.target.responseText
+		`${val.col}`
+		Canvas get context
+		Drawing lines
+		Canvas fillRect()
+		       fillText()
+		       save()
+		       strokeStyle
+		       moveTo()
+		       lineTo()
+		       stroke()
+		       restore()
+			

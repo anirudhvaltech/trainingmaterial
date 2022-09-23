@@ -1,0 +1,10 @@
+{
+    "root": [
+        {"casesHandled":200, "col":"#770909", "agentName":"Batman" },
+        {"casesHandled":300, "col":"#911818", "agentName":"Superman"  },
+        {"casesHandled":90, "col":"#a52929", "agentName":"Flash"  },
+        {"casesHandled":250, "col":"#c13f3f", "agentName":"Aquaman"  },
+        {"casesHandled":175, "col":"#ed6868", "agentName":"Cyborg"  },
+        {"casesHandled":225, "col":"#f28787", "agentName":"Wonder Woman"  }
+    ]
+}

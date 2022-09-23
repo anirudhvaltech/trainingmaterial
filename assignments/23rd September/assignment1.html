@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX-Canvas Assignment</title>
+    <style>
+
+        .button{
+            width: 520px;
+            margin: 10px auto;
+        }
+
+        #can{
+            border: 2px solid yellowgreen;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <button>Get Bar Chart</button>
+    <canvas id="can" width="600" height="600"></canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d");
+        ctx.font = "15px Arial";
+        drawLine(ctx, 50, 50, 50, 550, "black" );
+        drawLine(ctx, 50, 550, 550, 550, "black" );
+        ctx.fillText("Agent Name", 250, 590)
+        ctx.fillText("0", 10, 550);
+        ctx.fillText("100", 10, 450);
+        ctx.fillText("200", 10, 350);
+        ctx.fillText("300", 10, 250);
+        ctx.fillText("400", 10, 150);
+        ctx.fillText("500", 10, 50);
+        ctx.fillText("Cases Handled", 40, 30);
+
+        var i=100;
+        var xhr = new XMLHttpRequest;
+        xhr.addEventListener("readystatechange", xhrHandler);
+        function xhrHandler(evt){
+            if(evt.target.readyState == 4){
+                      
+                    JSON.parse(evt.target.responseText).root.forEach(val => {
+                        if(i<490){
+                            drawLine(ctx, i, 550, i, 550-val.casesHandled, "black");
+                            drawLine(ctx, i, 550-val.casesHandled, i+70, 550-val.casesHandled, "black");
+                            drawLine(ctx, i+70, 550-val.casesHandled, i+70, 550, "black");
+                            drawLine(ctx, i+70, 550, i, 550, "black");
+                            ctx.fillStyle = `${val.col}`
+                            ctx.fillRect(i,550-val.casesHandled, 70, val.casesHandled);
+                            ctx.fillText(val.agentName, i, 570);
+                            i+=80;
+                            
+                        }
+                    })           
+            }
+        }
+
+        function drawLine(ctx, startX, startY, endX, endY,color){
+            ctx.save();
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(startX,startY);
+            ctx.lineTo(endX,endY);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function clickHandler(){
+            xhr.open("get", "data.json", true);
+            xhr.send();
+        }
+        function init(){
+            
+            document.querySelector("button").addEventListener("click", clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+
+</body>
+</html>
