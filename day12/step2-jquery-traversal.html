@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="lib/jquery-3.6.1.js">//src attribute overwrites every inline
+    </script>
+    <script>//jquery gets executed when the dom is completely loaded
+        $(()=>{
+            // $("ul").css("border", "2px solid red");
+            // $("li.box1").css("border", "2px solid red");
+            // $("li:nth-child(1)").css("border", "2px solid red");
+            // $("li:even").css("border", "2px solid red");
+            // $("li:gt(4)").css("border", "2px solid red");
+            // $("ol:not(:has(.player))").css("border", "2px solid red");
+            // $(":header").css("border", "2px solid red");
+            // $("ol:contains(my name)").css("border", "2px solid red");
+            // $("input[name*='man']" ).val( "has man in it!" );
+            // $( "li[class*='box']" ).val( "has box in it!" ).css("background-color","limegreen");
+            // alert($("ul li, p").length);
+            // alert($("ul").children().length);
+            // $("ul").find(":contains(4)").css("border","2px solid black");
+            // console.log($("ul").find(":contains(4)").text);
+            // $("li").after("lorem");
+            // $("li:nth-child(1)").appendTo(".player");
+        })
+    </script>
+</head>
+<body>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li class="player">List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+      </ul>
+      <ol>
+        <li class="box1">Ordered List</li>
+        <li class="box2">Ordered List</li>
+        <li class="box3">Ordered List</li>
+        <li class="box4">Ordered List</li>
+        <li class="box5">Ordered List</li>
+      </ol>  
+      <ol>my name</ol>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus reprehenderit distinctio nisi consequuntur totam laborum omnis corporis iste? Deleniti impedit nihil consequatur ratione nam repellendus molestiae praesentium nulla provident pariatur!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus reprehenderit distinctio nisi consequuntur totam laborum omnis corporis iste? Deleniti impedit nihil consequatur ratione nam repellendus molestiae praesentium nulla provident pariatur!</p>
+      <h1>Welcome</h1>
+      <h2>to your life</h2>
+      <input name="man-news">
+      <input name="milkman">
+      <input name="newmilk">
+</body>
+</html>

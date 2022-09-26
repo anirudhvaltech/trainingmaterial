@@ -1,0 +1,84 @@
+{
+    "root": {
+      "participant": [
+        {
+          "firstname": "Archies",
+          "lastname": "Singh",
+          "city": "Nagpur",
+          "email": "archies.singh@valtech.com"
+        },
+        {
+          "firstname": "Anmol",
+          "lastname": "Varshney",
+          "city": "Badaun",
+          "email": "anmol.varshney@valtech.com"
+        },
+        {
+          "firstname": "Sharan",
+          "lastname": "R",
+          "city": "Bangalore",
+          "email": "sharan.r@valtech.com"
+        },
+        {
+          "firstname": "Sneha",
+          "lastname": "Satish",
+          "city": "Mysore",
+          "email": "sneha.satish@valtech.com"
+        },
+        {
+          "firstname": "Harshitha",
+          "lastname": "R",
+          "city": "Bangalore",
+          "email": "harshitha.r@valtech.com"
+        },
+        {
+          "firstname": "Moulidhar",
+          "lastname": "B",
+          "city": "Kolar",
+          "email": "moulidhar.b@valtech.com"
+        },
+        {
+          "firstname": "JayaKumar",
+          "lastname": "A",
+          "city": "Bangalore",
+          "email": "jaya.kumar@valtech.com"
+        },
+        {
+          "firstname": "Pavan",
+          "lastname": "N",
+          "city": "Mysore",
+          "email": "pavan.n@valtech.com"
+        },
+        {
+          "firstname": "Mohammed",
+          "lastname": "Wasil",
+          "city": "Bangalore",
+          "email": "mohammed.wasil@valtech.com"
+        },
+        {
+          "firstname": "Syeda",
+          "lastname": "Saniya",
+          "city": "Bangalore",
+          "email": "syeda.saniya@valtech.com"
+        },
+        {
+          "firstname": "Himani",
+          "lastname": "Sahoo",
+          "city": "Bhuvaneshwar",
+          "email": "himani.sahoo@valtech.com"
+        },
+        {
+          "firstname": "Anirudh",
+          "lastname": "Herady",
+          "city": "Mangalore",
+          "email": "anirudh.herady@valtech.com"
+        },
+        {
+          "firstname": "Mihir",
+          "lastname": "Kumar",
+          "city": "Patna",
+          "email": "mihir.kumar@valtech.com"
+        }
+      ]
+    }
+  }

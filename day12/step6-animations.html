@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .container{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            margin: auto;
+        }
+        button{
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
+    </style>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).on("click", function(){
+                // alert("you clicked the button")
+                $(".container").show();
+            })
+            $("button").eq(1).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").hide();
+            })
+            $("button").eq(2).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").show(1000);
+            })
+            $("button").eq(3).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").hide(1000);
+            })
+            $("button").eq(4).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").toggle(1000);
+            })
+            $("button").eq(5).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").fadeIn(1000);
+            })
+            $("button").eq(6).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").fadeOut(1000);
+            })
+            $("button").eq(7).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").fadeTo(1000, 0.5);
+            })
+            $("button").eq(8).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").fadeTo(1000, 1);
+            })
+            $("button").eq(9).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").slideUp(1000);
+            })
+            $("button").eq(10).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").slideDown(1000);
+            })
+            $("button").eq(11).on("click", function(){
+                // alert("you clicked the 2nd button")
+                $(".container").slideToggle(1000);
+            })
+             
+        })
+    </script>
+</head>
+<body>
+    <button>Show</button>
+    <button>Hide</button>
+    <button>Show in 1 sec</button>
+    <button>Hide in 1 sec</button>
+    <button>Toggle</button>
+    <button>Fade in</button>
+    <button>Fade out</button>
+    <button>Fade to 0.5</button>
+    <button>Fade to 1</button>
+    <button>Slide up</button>
+    <button>Slide down</button>
+    <button>Slide toggle</button>
+    <div class="container"></div>
+</body>
+</html>
