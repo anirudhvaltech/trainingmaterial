@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", changeHandler);
+        function changeHandler(){
+            document.getElementById("list").innerHTML = "";
+            if(xhr.readyState == 4){
+                // console.log(xhr.responseText);
+                var herolist = JSON.parse(xhr.responseText);
+                    herolist.data.forEach(function(hero,idx){
+                        document.getElementById("list").innerHTML += "<li>"+hero.htitle+"</li>"
+                    })
+            }
+        }
+        function init(){
+            xhr.open("get","/data",true);
+            xhr.send();
+            console.log(xhr.responseText);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+   <div class="container">
+    <form name="hero" id="myform" action="/" method="post">
+        <div class="mb-3">
+            <label class="form-label" for="htitle">Title : 
+                <input type="text" name="htitle" class="form-control"  id="htitle" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="hfname">First Name : 
+                <input type="text" name="hfname"  class="form-control" id="hfname" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="hlname">Last Name : 
+                <input type="text" name="hlname" class="form-control"  id="hlname" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="hpower">Power : 
+                <input type="text" name="hpower" class="form-control"  id="hpower" />
+            </label>
+        </div>
+        <button class="btn btn-primary">Add Hero Info</button>
+    </form>
+   </div>
+   <ol id="list"></ol>
+</body>
+</html>
