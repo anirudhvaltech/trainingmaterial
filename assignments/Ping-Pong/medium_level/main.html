@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../lib/jquery-min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function init(){
+            var count = 3;
+            var si = setInterval(function(){
+                if(count>0){
+                    document.getElementById("startGame").innerHTML=count;
+                    count--;
+                }
+                else if(count == 0){
+                    document.getElementById("startGame").innerHTML="GO";
+                    count--;
+                }
+                else{
+                    document.getElementById("startGame").innerHTML=" ";
+                    clearInterval(si);   
+                }
+            },1000)
+        }
+        document.addEventListener("DOMContentLoaded", init)
+    </script>
+
+</head>
+
+<body>
+<h2 id="mode">MODE : MEDIUM</h2>
+    <div id="pong">
+        <div id = "startGame">
+        </div>
+
+        <div id="user-pedal"></div>
+
+        <div id="ai-pedal"></div>
+
+        <div id="ball"></div>
+        
+        <div id="bullet"></div>
+        <div id="bullet1"></div>
+
+    </div>
+    <div id="overScore">
+        YOU<div id="scoreUser"></div>
+        <div id="scoreAi"></div>PC
+    </div>
+
+    <div id="gameover">
+        <h1>GAME OVER!</h1>
+        <h2 id="who_win"></h2>
+        <a href="../second.html"><button id="btn_click">REPLAY</button></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

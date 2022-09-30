@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "Retro";
+    src: url(../fonts/Retro-Gaming.ttf),
+    local("Retro");
+}
+#pong {
+background-color: black;
+height: 500px;
+/* max-width: 100%; */
+max-width: 600px;
+margin: 0 auto;
+position: relative;
+border: 5px solid yellow;
+border-bottom: 0px;
+}
+
+#user-pedal {
+height: 100px;
+width: 20px;
+border-radius: 40%;
+background-color: blue;
+position: absolute;
+}
+
+#ai-pedal {
+height: 100px;
+width: 20px;
+right: 0;
+border-radius: 40%;
+background-color: red;
+position: absolute;
+}
+
+#ball {
+left: 200px;
+display: block;
+margin: auto;
+height: 30px;
+width: 30px;
+background-color: yellow;
+border-radius: 50%;
+position: absolute;
+top: 200px;
+}
+
+#bullet {
+display: none;
+left: 1px;
+margin: 40px;
+width: 50px;
+position: absolute;
+height: 3px;
+background-color: aliceblue;
+}
+
+#bullet1 {
+display: none;
+right: 0;
+margin: 40px;
+width: 50px;
+position: absolute;
+height: 3px;
+background-color: aliceblue;
+}
+#overScore{
+background-color: black;
+height: 75px;
+color: yellow;
+max-width: 560px;
+margin-left: auto;
+margin-right: auto;
+position: static;
+align-items: center;
+display: flex;
+padding: 20px;
+border: 5px solid  yellow;
+border-bottom: 5px solid yellow;
+
+font-size: 30px;
+}
+#scoreUser{
+
+margin: auto;
+display: block;
+font-size: 30px;
+}
+#scoreAi{
+margin: auto;
+display: block;
+font-size: 30px;
+}
+#gameover{
+display: none;
+text-align: center;
+font-weight: bold; 
+color: yellow;
+background-color: black;
+border: 5px solid yellow;
+/* border-top: 0px solid transparent; */
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+position: static;
+padding-bottom: 10px;
+
+}
+#btn_click{
+width:100px;
+height: 30px;
+background-color: black;
+color: yellow;
+border: 2px solid yellow;
+border-radius: 40%;
+font-weight: bolder;
+font-family: Retro;
+}
+#btn_click:hover{
+background-color:yellow;
+color: black;
+
+
+}
+body{
+background-color: black;
+border: 5px solid yellow;
+padding: 20px;
+font-family: Retro;
+color: yellow;
+
+}
+
+#startGame{
+font-size: 100px;
+height: 150px;
+width: 150px;
+padding-left: 75px;
+color: yellow;
+margin: auto;
+position: static;
+/* border: 5px solid red; */
+}
+
+#mode{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+

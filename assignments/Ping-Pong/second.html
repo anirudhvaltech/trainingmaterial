@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        /* #imgs{
+        position: relative;
+        filter: blur(5px);
+      } */
+      @font-face {
+    font-family: "Retro";
+    src: url(./fonts/Retro-Gaming.ttf),
+    local("Retro");
+}
+      .head{
+        position: absolute;
+        top:10%;
+        width:100%;
+        text-align: center;
+        font-size: 40px;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;       
+      }
+      .easy{
+        position:absolute;
+        top:20%;
+        left: 45%;
+        color:black;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+        width:250px;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,255,119,1) 50%);
+      }
+      .med{
+        position:absolute;
+        top:30%;
+        left: 45%;
+        color:black;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+        width:250px;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,209,0,1) 50%);
+      }
+      .diffi{
+        position:absolute;
+        top:40%;
+        left: 45%;
+        color:black;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+        width:250px;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,97,0,1) 50%);
+      }
+      body{
+        font-family: Retro;
+      }
+      
+       
+    </style>
+</head>
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="imgs" src="images/img3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <h2 class="head">Choose your difficulty</h2>
+          <a class="btn btn-outline-dark btn-warning btn-secondary easy" href="easy_level/main.html" role="button">Easy</a>
+          <br>
+          <a class="btn btn-outline-dark btn-warning btn-secondary med" href="medium_level/main.html" role="button">Medium</a>
+          <br>
+          <a class="btn btn-outline-dark btn-warning btn-secondary diffi" href="hard_level/main.html" role="button">Difficult</a>        
+    </div>
+</body>
+</html>
