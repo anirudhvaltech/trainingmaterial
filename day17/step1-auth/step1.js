@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const session = require("client-sessions")
+const bcrypt = require("bcrypt")
 let app = express();
 
 app.use(express.urlencoded({extended:true}));
@@ -28,6 +29,8 @@ mongoose.connect(dburl)
 .then(res=>console.log("db connected"))
 .catch(error => console.log("Error ",error));
 
+// console.log(bcrypt.hashSync("anirudh",bcrypt.genSaltSync(10)))
+
 app.get("/",(req,res)=>{
     res.render("home.pug")
 })
@@ -42,7 +45,7 @@ app.post("/login",(req,res)=>{
             })
         }
         else{
-            if(req.body.password === user.password){
+            if(bcrypt.compareSync(req.body.password, user.password)){
                 req.valtech.user = user;
                 res.redirect("/profile");
             }
@@ -51,19 +54,19 @@ app.post("/login",(req,res)=>{
                     error: "invalid email or password"
                 })
             }
-        }
-        
+        } 
     })
 })
 app.get("/register",(req,res)=>{
     res.render("register.pug")
 })
 app.post("/register",(req,res)=>{
+    var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     var user = new User({
         firstname : req.body.firstname,
         lastname : req.body.lastname,
         email : req.body.email,
-        password : req.body.password,
+        password : hash,
     })
 
     user.save(function(error){
