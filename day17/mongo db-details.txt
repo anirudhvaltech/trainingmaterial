@@ -1,0 +1,8 @@
+
+Database name:valtechdb
+
+Password: rWaCRaBYG6pFMLJv
+
+Link: mongodb+srv://admin:rWaCRaBYG6pFMLJv@cluster0.ml8l66d.mongodb.net/valtechdb?retryWrites=true&w=majority
+
+new password:2Sol9sO52o7bihnA
