@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script>
+        function deleteHero(args){
+            $.ajax({
+                method : "delete",
+                url : "/delete/"+args,
+                success : function(res){
+                    reload();
+                    console.log(res.message, res.hero)
+                },
+                error : function(err){
+                    console.log("Error ", err)
+                }
+            })
+        }
+        function reload(){
+            $.ajax({
+                url : "/data",
+                method : "get",
+                success : function(res){
+                    // console.log(res);
+                    let tbody = $("#tbody");
+                    tbody.empty();
+                    $(res).each(function(idx, hero){
+                        tbody.append(`<tr>
+                                        <th scope="row">${ idx+1 }</th>
+                                        <td>${ hero.title }</td>
+                                        <td>${ hero.firstname }</td>
+                                        <td>${ hero.lastname }</td>
+                                        <td>
+                                            <button data-heroid="${ hero._id }" class="edit btn btn-warning"> Edit </button>
+                                        </td>
+                                        <td>
+                                            <button data-heroid="${ hero._id }" class="delete btn btn-danger"> Delete </button>    
+                                        </td>
+                                    </tr>`)
+                    })
+                },
+                error : function(error){
+                    console.log(error)
+                }
+            })
+        };
+        //--------------------
+        function addHeroHandler(){
+            $.ajax({
+                url : "/data",
+                method : "post",
+                contentType : "application/json",
+                dataType : "json",
+                data : JSON.stringify({
+                    title : $("#htitle").val(),
+                    firstname : $("#hfname").val(),
+                    lastname : $("#hlname").val()
+                }),success : function(){
+                    reload();
+                    $("#htitle").val('');
+                    $("#hfname").val('');
+                    $("#hlname").val('');
+                },error : function(err){
+                    console.log("Error ", err)
+                }
+            })
+        }
+        //--------------------
+        function updateHeroHandler(){
+            // alert($("#edit_heroid").val());
+           /*  alert(
+                JSON.stringify( {
+                    title : $("#edit_htitle").val(),
+                    firstname : $("#edit_hfname").val(),
+                    lastname : $("#edit_hlname").val()
+                } )
+            ) */
+            $.ajax({
+                url : "/update/"+$("#edit_heroid").val(),
+                method : "post",
+                contentType : "application/json",
+                dataType : "json",
+                data : JSON.stringify({
+                    title : $("#edit_htitle").val(),
+                    firstname : $("#edit_hfname").val(),
+                    lastname : $("#edit_hlname").val()
+                }),
+                success : function(res){
+                    reload();
+                    $("#edit_htitle").val('');
+                    $("#edit_hfname").val('');
+                    $("#edit_hlname").val('');
+                    $("#editbox").toggle();
+                    $("#addbox").toggle();
+                }
+            })
+        }
+        function selectToEditHero(btn){
+           // $("#editBtn").attr("data-hid", res._id );
+            $.ajax({
+                method : "get",
+                url : "/edit/"+$(btn).attr("data-heroid"),
+                success : function(res){
+                    $("#edit_htitle").val(res.title);
+                    $("#edit_hfname").val(res.firstname);
+                    $("#edit_hlname").val(res.lastname);
+                    $("#edit_heroid").val(res._id);
+                    $("#editbox").toggle();
+                    $("#addbox").toggle();
+                }
+            })
+        }
+        //--------------------
+        $(function(){
+            reload();
+            $("#editbox").toggle();
+            $("#addBtn").on("click", addHeroHandler);
+            $("#tbody").on("click",".edit",function(evt){
+               selectToEditHero(evt.target);
+            });
+            $("#tbody").on("click",".delete",function(evt){
+                // alert(evt.target.getAttribute("data-heroid"));
+                deleteHero($(evt.target).attr("data-heroid"))
+            });
+            $("#editBtn").on("click", updateHeroHandler )
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mongo DB CRUD Application</h1>
+        <hr>
+ 
+        <div id="addbox">
+            <h2>Add Hero</h2>
+            <div class="mb-3">
+                <label for="htitle" class="form-label">Hero Title</label>
+                <input  class="form-control" id="htitle" >
+            </div>
+            <div class="mb-3">
+                <label for="hfname" class="form-label">Hero First Name</label>
+                <input  class="form-control" id="hfname" >
+            </div>
+            <div class="mb-3">
+                <label for="hlname" class="form-label">Hero Last Name</label>
+                <input  class="form-control" id="hlname" >
+            </div> 
+            <button id="addBtn" type="submit" class="btn btn-primary">Add New Hero</button>
+        </div>
+ 
+ 
+        <div id="editbox">
+            <h2>Update Hero</h2>
+            <div class="mb-3">
+                <label for="edit_htitle" class="form-label">Edit Hero Title</label>
+                <input  class="form-control" id="edit_htitle" >
+            </div>
+            <div class="mb-3">
+                <label for="edit_hfname" class="form-label">Edit Hero First Name</label>
+                <input  class="form-control" id="edit_hfname" >
+            </div>
+            <div class="mb-3">
+                <label for="edit_hlname" class="form-label">Edit Hero Last Name</label>
+                <input  class="form-control" id="edit_hlname" >
+            </div> 
+            <input type="hidden"  class="form-control" id="edit_heroid" >
+            <button id="editBtn" type="submit" class="btn btn-primary">Update Hero</button>
+        </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sl #</th>
+                <th scope="col">Title</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+    </div>
+</body>
+</html>
