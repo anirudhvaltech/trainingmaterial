@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>  
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        /* 
+        let elm = document.createElement("h1");
+            elm.innerHTML = "welcome to your life";
+            elm.setAttribute("lang","fr"); 
+        */
+        // let elm = React.createElement("h1",{lang:"fr"},"welcome to your life");
+       
+        function Table(){
+            let company = "Valtech";
+            return   <div>
+                            <h1>Hello { company }</h1>
+                            <ol>
+                                <li>List Item 1</li>
+                                <li>List Item 2</li>
+                                <li>List Item 3</li>
+                                <li>List Item 4</li>
+                                <li>List Item 5</li>
+                            </ol>
+                       </div>
+        }            
+        // ReactDOM.render(elm, document.getElementById("root"));
+        // ReactDOM.createRoot(document.getElementById("root")).render(myComp());
+        ReactDOM.createRoot(document.getElementById("root")).render(<Table/>);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
